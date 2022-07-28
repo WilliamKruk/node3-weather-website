@@ -21,8 +21,9 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = 'An Error has Occured.'
                 messageTwo.textContent = 'Please Try Again.'
             } else {
+                const geoDataPath = data.weatherData.geoData
                 console.log(data)
-                messageOne.textContent = data.weatherData.geoData.region
+                messageOne.textContent = `${geoDataPath.disp}\n${geoDataPath.region}.\n${geoDataPath.street}.`
                 messageTwo.textContent = 'Forecast: ' + data.weatherData.forecastData.temp
             }
         })
